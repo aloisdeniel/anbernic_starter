@@ -1,5 +1,5 @@
 #include <SDL2/SDL.h>
-#include <stdbool.h>
+#include <math.h>
 
 // Resolution of an Anbernic RG35XXH
 #define SCREEN_WIDTH 640
@@ -18,12 +18,12 @@ typedef struct {
 // Rotation angles
 float angleX = 0.0f, angleY = 0.0f;
 
-void handleInput(bool *running) {
+void handleInput(int *running) {
   SDL_Event event;
   while (SDL_PollEvent(&event)) {
     switch (event.type) {
     case SDL_QUIT:
-      *running = false;
+      *running = 0;
       break;
     case SDL_KEYDOWN: // Keyboard
       switch (event.key.keysym.sym) {
@@ -40,7 +40,7 @@ void handleInput(bool *running) {
         angleY += 5.0f;
         break;
       case SDLK_RETURN:
-        *running = false;
+        *running = 0;
         break;
       }
       break;
@@ -59,9 +59,10 @@ void handleInput(bool *running) {
         angleY += 5.0f;
         break;
       case SDL_CONTROLLER_BUTTON_START:
-        *running = false;
+        *running = 0;
         break;
       }
+      break;
     }
   }
 }
@@ -107,6 +108,12 @@ int main() {
     return 1;
   }
 
+
+  // Open game controller to get inputs
+  if(SDL_IsGameController(0)) {
+    SDL_GameControllerOpen(0);
+  }
+
   // Create renderer
   SDL_Renderer *renderer =
       SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -132,7 +139,7 @@ int main() {
       {0, 4}, {1, 5}, {2, 6}, {3, 7}  // Connecting edges
   };
 
-  bool running = true;
+  int running = 1;
   while (running) {
     handleInput(&running);
 
