@@ -8,7 +8,7 @@ An example program based on SDL2 that is compatible with Anbernic Linux based ha
 
 ## Build
 
-To build the program for an Anbernic device, you need to target the ARM64 architecture. The easiest way to achieve this if you're not running on this architecture is to run it from a Linux VM, like the pre-built [UTM Ubuntu Virtual Machine].
+To build the program for an Anbernic device, you need to target the ARM64 architecture. The easiest way to achieve this if you're not running on this architecture is to run it from a Linux VM, like the pre-built [UTM Ubuntu Virtual Machine](https://mac.getutm.app/gallery/ubuntu-20-04).
 
 You will need at least the base tools first :
 
