@@ -29,10 +29,6 @@ This should output two files in the `build` directory : `cube` and `cube.sh`
 
 To run the program on your Anbernic device, you can use the `make deploy` command.
 
-Make sure to update the `Makefile` with your device IP and target directory first.
+Since this command uses SSH to send the files, make sure to enable SSH connection on your device and to update the `Makefile` with your device IP and target directory first.
 
 Then your app should be available on your device after a library update!
-
-```sh
-
-```
