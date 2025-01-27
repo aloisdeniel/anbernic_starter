@@ -1,4 +1,4 @@
-![photo](doc/photo.jpg)
+![photo](doc/photo.png)
 
 ![animation](doc/screenshot.gif)
 
