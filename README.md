@@ -1,2 +1,5 @@
-# anbernic_starter
-An example application that runs on a Linux-based Anbernic device.
+An example program based on SDL2 that is compatible with Anbernic Linux based handhelds.
+
+> Tested on Anbernic RG35XX H
+
+
